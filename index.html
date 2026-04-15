@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Всеволод | Обо мне</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e5e5; overflow-x: hidden; }
+        
+        .card-blur {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .card-blur:hover {
+            transform: translateY(-5px);
+            border-color: rgba(168, 85, 247, 0.5);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0.8)), 
+                        url('m1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .img-hover {
+            transition: transform 0.5s ease;
+        }
+        .img-container:hover .img-hover {
+            transform: scale(1.05);
+        }
+        
+        .cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body class="selection:bg-purple-500 selection:text-white">
+
+	<audio id="bgMusic" loop>
+        <source src="track.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicToggle" class="fixed bottom-6 right-6 z-50 card-blur px-5 py-3 rounded-full flex items-center gap-3 hover:bg-white/10 transition-all group">
+        <span id="musicIcon" class="text-xl">🔇</span>
+        <span id="musicText" class="text-sm font-semibold tracking-wide uppercase text-gray-300 group-hover:text-white transition">Музыка</span>
+    </button>
+
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-[#0f0f0f]/80 backdrop-blur-md border-b border-white/10">
+        <div class="text-xl font-bold tracking-tight">WuSix</div>
+        <div class="space-x-8 text-sm uppercase tracking-wide hidden md:block text-gray-400">
+            <a href="#about" class="hover:text-white transition">Обо мне</a>
+            <a href="#math" class="hover:text-white transition">Учеба</a>
+            <a href="#inspiration" class="hover:text-white transition">Ориентиры</a>
+            <a href="#lifestyle" class="hover:text-white transition">Жизнь</a>
+        </div>
+    </nav>
+
+    <section id="about" class="relative min-h-screen flex items-center pt-20 px-6 overflow-hidden">
+        
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="bg.mp4" type="video/mp4">
+            Ваш браузер не поддерживает тег video.
+        </video>
+
+        <div class="absolute inset-0 bg-[#0f0f0f]/70 z-0"></div>
+
+        <div class="relative z-10 max-w-4xl space-y-6 reveal mx-auto w-full">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter">
+                Обо мне.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed h-16">
+                <span id="typewriter" class="cursor"></span>
+            </p>
+            <div class="pt-4">
+                <a href="#math" class="inline-block px-8 py-3 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+                    Смотреть дальше ↓
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="math" class="py-24 px-6 bg-white text-black">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="rounded-2xl overflow-hidden shadow-xl img-container reveal">
+                <img src="m2.jpg" alt="Всеволод" class="w-full h-auto object-cover img-hover">
+            </div>
+            <div class="space-y-6 reveal" style="transition-delay: 0.2s;">
+                <h2 class="text-4xl font-bold tracking-tight">Год работы на результат</h2>
+                <div class="space-y-4 text-gray-700 text-lg leading-relaxed">
+                    <p>
+                        Спустя год интенсивного обучения, я смог взять <strong>диплом 2 степени олимпиады «Физтех»</strong>, который уже открывает мне двери в топовые вузы.
+                    </p>
+                    <p>
+                        Я не занимался в математических кружках с начальной школы. Этот диплом — результат одного года сфокусированной работы с нуля. Только системный подход к задачам и дисциплина. 
+                    </p>
+                    <p>
+                        Останавливаться на этом я не собираюсь. Я буду дальше совершенствоваться в математике, а также подключу информатику и русский для большей уверенности при поступлении в вуз.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inspiration" class="py-24 px-6 bg-[#0f0f0f]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 reveal">На кого я равняюсь</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="card-blur p-6 rounded-2xl space-y-4 reveal" style="transition-delay: 0.1s;">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="Savvateev.png" alt="Савватеев" class="w-full h-48 object-cover grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Алексей Савватеев</h4>
+                        <p class="text-sm text-gray-500">Математика</p>
+                    </div>
+                </div>
+                
+                <div class="card-blur p-6 rounded-2xl space-y-4 reveal" style="transition-delay: 0.2s;">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="Koval.png" alt="Максим Коваль" class="w-full h-48 object-cover grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+					<div>
+                        <h4 class="font-bold text-lg">Максим Коваль</h4>
+                        <p class="text-sm text-gray-500">Математика</p>
+                    </div>
+                </div>
+
+                <div class="card-blur p-6 rounded-2xl space-y-4 reveal" style="transition-delay: 0.3s;">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="Yaschenko.webp" alt="Иван Ященко" class="w-full h-48 object-cover grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Иван Ященко</h4>
+                        <p class="text-sm text-gray-500">Образование</p>
+                    </div>
+                </div>
+
+                <div class="card-blur p-6 rounded-2xl space-y-4 reveal" style="transition-delay: 0.4s;">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="Artur.jpg" alt="Артур Пирожков" class="w-full h-48 object-cover grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+					<div>
+                        <h4 class="font-bold text-lg">Артур Пирожков</h4>
+                        <p class="text-sm text-gray-500">Музыка</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="lifestyle" class="py-24 px-6 relative overflow-hidden border-t border-white/5">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+            <div class="md:w-1/2 space-y-6 reveal">
+                <h2 class="text-3xl font-bold">За пределами учебы</h2>
+                <div class="text-gray-400 space-y-4 leading-relaxed">
+                    <p>
+                        В свободное время я отдыхаю с друзьями, занимаясь вместе с ними в спортзале.
+                    </p>
+                    <p>
+                        Здоровый, активный образ жизни - необходим каждому человеку. Этому принципу я стараюсь следовать.
+                    </p>
+                </div>
+            </div>
+            <div class="md:w-1/2 rounded-2xl overflow-hidden img-container reveal" style="transition-delay: 0.2s;">
+                <img src="m3.jpg" alt="Лес" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 img-hover">
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 border-t border-white/10 px-6 text-center text-gray-600 text-sm">
+        <p>&copy; 2026 WuSix</p>
+    </footer>
+
+    <script>
+        const audio = document.getElementById('bgMusic');
+        const toggleBtn = document.getElementById('musicToggle');
+        const musicIcon = document.getElementById('musicIcon');
+        const musicText = document.getElementById('musicText');
+
+        audio.volume = 0.2; 
+
+        toggleBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();	
+                musicIcon.innerText = '💿';
+                musicIcon.classList.add('spin');
+                musicText.innerText = 'Играет';
+                toggleBtn.classList.add('border-purple-500');
+            } else {
+                audio.pause();
+                musicIcon.innerText = '🔇';
+                musicIcon.classList.remove('spin');
+                musicText.innerText = 'Музыка';
+                toggleBtn.classList.remove('border-purple-500');
+            }
+        });
+		
+        const textToType = "Унижаю олимпиады по математике.";
+        const typeWriterElement = document.getElementById('typewriter');
+        let i = 0;
+
+        function typeWriter() {
+            if (i < textToType.length) {
+                typeWriterElement.innerHTML += textToType.charAt(i);
+                i++;
+                setTimeout(typeWriter, 40); // Скорость печати
+            } else {
+                typeWriterElement.classList.remove('cursor'); // Убираем мигающий курсор в конце
+            }
+        }
+        
+        setTimeout(typeWriter, 500);
+
+        const reveals = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        reveals.forEach(reveal => {
+            observer.observe(reveal);
+        });
+    </script>
+</body>
+</html>
